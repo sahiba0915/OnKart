@@ -3,6 +3,7 @@ import Helmet from '../components/Helmet/Helmet';
 import {Container, Row, Col} from "reactstrap";
 import heroImg from '../assets/images/hero-img.png';
 import '../styles/home.css';
+import Services from '../services/services'
 
 const Home = () => {
 
@@ -33,6 +34,7 @@ const Home = () => {
           </Row>
         </Container>
       </section>
+      <Services/>
     </Helmet>
   )
 }

@@ -37,3 +37,8 @@
 .hero-content {
     padding-top: 45px;
 }
+
+.section-subtitle {
+    color: var(--primary-color);
+    font-weight: 600;
+}

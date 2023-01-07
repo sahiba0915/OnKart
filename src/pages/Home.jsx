@@ -1,13 +1,21 @@
-import React from 'react';
+import React , {useState, useEffect} from 'react';
 import Helmet from '../components/Helmet/Helmet';
 import {Container, Row, Col} from "reactstrap";
 import heroImg from '../assets/images/hero-img.png';
 import '../styles/home.css';
 import Services from '../services/services'
+import ProductList from '../components/UI/ProductList';
+import products from '../assets/data/products';
 
 const Home = () => {
 
-  const year = new Date().getFullYear();
+  const year = new Date().getFullYear(); 
+  const [data, setData] = useState(products);
+
+  useEffect(() => {
+    const filteredProducts = products.filter(item => item.category === 'chair');
+    setData(filteredProducts);
+  }, []);
   return (
     <Helmet title = {'Home'}>
       <section className="hero-section">
@@ -35,6 +43,16 @@ const Home = () => {
         </Container>
       </section>
       <Services/>
+      <section className="trending-products">
+        <Container>
+          <Row>
+            <Col lg='12' className='text-center'>
+              <h2 className="section-subtitle" >Trending Products</h2>
+            </Col>
+            <ProductList data={data}/>
+          </Row>
+        </Container>
+      </section>
     </Helmet>
   )
 }

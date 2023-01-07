@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row , Col } from 'reactstrap';
 import { motion } from 'framer-motion';
 import './services.css';
 import serviceData from '../assets/data/serviceData';

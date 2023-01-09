@@ -10,11 +10,14 @@ import products from '../assets/data/products';
 const Home = () => {
 
   const year = new Date().getFullYear(); 
-  const [data, setData] = useState(products);
+  const [trendingProducts, setTrendingProducts] = useState([]);
+  const [bestSalesProducts, setBestSalesProducts] = useState([]);
 
   useEffect(() => {
-    const filteredProducts = products.filter(item => item.category === 'chair');
-    setData(filteredProducts);
+    const filteredTrendingProducts = products.filter(item => item.category === 'chair');
+    const filteredBestSalesProducts = products.filter(item => item.category === 'sofa');
+    setTrendingProducts(filteredTrendingProducts);
+    setBestSalesProducts(filteredBestSalesProducts);
   }, []);
   return (
     <Helmet title = {'Home'}>
@@ -49,7 +52,18 @@ const Home = () => {
             <Col lg='12' className='text-center'>
               <h2 className="section-subtitle" >Trending Products</h2>
             </Col>
-            <ProductList data={data}/>
+            <ProductList data={trendingProducts}/>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="best-sales">
+        <Container>
+          <Row>
+            <Col lg='12' className='text-center'>
+              <h2 className="section-title">Best Sales</h2>
+            </Col>
+            <ProductList data={bestSalesProducts}/>
           </Row>
         </Container>
       </section>

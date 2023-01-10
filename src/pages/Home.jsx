@@ -6,6 +6,10 @@ import '../styles/home.css';
 import Services from '../services/services'
 import ProductList from '../components/UI/ProductList';
 import products from '../assets/data/products';
+import counterImg from '../assets/images/counter-timer-img.png';
+import Clock from '../components/UI/Clock';
+import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 const Home = () => {
 
@@ -64,6 +68,26 @@ const Home = () => {
               <h2 className="section-title">Best Sales</h2>
             </Col>
             <ProductList data={bestSalesProducts}/>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="timer-count">
+        <Container>
+          <Row>
+            <Col lg = '6' md = '6'>
+              <div className="clock-top-content">
+                <h4 className='text-white fs-6 mb-2'>Limited offers</h4>
+                <h3 className='text-white fs-6 mb-3'>Quality</h3>
+              </div>
+              <Clock/>
+              <motion.button whileTap={{scale: 1.2}} className="buy-btn store-btn">
+                <Link to ="/shop">Visit Store</Link>
+              </motion.button>
+            </Col>
+            <Col lg = '6' md = '6' className='text-end'>
+              <img src={counterImg} alt="counter-img" />
+            </Col>
           </Row>
         </Container>
       </section>

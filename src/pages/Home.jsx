@@ -16,12 +16,21 @@ const Home = () => {
   const year = new Date().getFullYear(); 
   const [trendingProducts, setTrendingProducts] = useState([]);
   const [bestSalesProducts, setBestSalesProducts] = useState([]);
+  const [mobileProducts, setMobileProducts] = useState([]);
+  const [wirelessProducts, setWirelessProducts] = useState([]);
+  const [popularProducts, setPopularProducts] = useState([]);
 
   useEffect(() => {
     const filteredTrendingProducts = products.filter(item => item.category === 'chair');
     const filteredBestSalesProducts = products.filter(item => item.category === 'sofa');
+    const filteredMobileProducts = products.filter(item => item.category === 'mobile');
+    const filteredWirelessProducts = products.filter(item => item.category === 'wireless');
+    const filteredPopularProducts = products.filter(item => item.category === 'watch');
     setTrendingProducts(filteredTrendingProducts);
     setBestSalesProducts(filteredBestSalesProducts);
+    setMobileProducts(filteredMobileProducts);
+    setWirelessProducts(filteredWirelessProducts);
+    setPopularProducts(filteredPopularProducts);
   }, []);
   return (
     <Helmet title = {'Home'}>
@@ -53,7 +62,7 @@ const Home = () => {
       <section className="trending-products">
         <Container>
           <Row>
-            <Col lg='12' className='text-center'>
+            <Col lg='12' className='text-center mb-5'>
               <h2 className="section-subtitle" >Trending Products</h2>
             </Col>
             <ProductList data={trendingProducts}/>
@@ -64,8 +73,8 @@ const Home = () => {
       <section className="best-sales">
         <Container>
           <Row>
-            <Col lg='12' className='text-center'>
-              <h2 className="section-title">Best Sales</h2>
+            <Col lg='12' className='text-center mb-5'>
+              <h2 className="section-subtitle">Best Sales</h2>
             </Col>
             <ProductList data={bestSalesProducts}/>
           </Row>
@@ -88,6 +97,29 @@ const Home = () => {
             <Col lg = '6' md = '6' className='text-end'>
               <img src={counterImg} alt="counter-img" />
             </Col>
+          </Row>
+        </Container>
+      </section>
+
+      <section className="new-arrivals">
+        <Container>
+          <Row>
+            <Col lg='12' className='text-center mb-5'>
+              <h2 className="section-subtitle">New Arrivals</h2>
+            </Col>
+            <ProductList data={mobileProducts} />
+            <ProductList data={wirelessProducts} />
+          </Row>
+        </Container>
+      </section>
+
+      <section className="popular-category">
+        <Container>
+          <Row>
+            <Col lg='12' className='text-center mb-5'>
+            <h2 className="section-subtitle">Popular Category</h2>
+            </Col>
+            <ProductList data={popularProducts}/>
           </Row>
         </Container>
       </section>

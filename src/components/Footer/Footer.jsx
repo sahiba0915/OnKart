@@ -2,7 +2,6 @@ import React from 'react';
 import './footer.css';
 import {Container, Row, Col, ListGroup, ListGroupItem} from "reactstrap";
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/eco-logo.png';
 
 const Footer = () => {
 
@@ -68,16 +67,16 @@ const Footer = () => {
           <Col lg='3'>
           <div className='footer-quick-links'>
               <h4 className="quick-link-title">Contact</h4>
-              <ListGroup className="mb-3">
-                <ListGroupItem className='ps-0 border-0'>
+              <ListGroup className="footer-contact">
+                <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                   <span><i class="ri-map-pin-line"></i></span>
                   <p>123, Jamshedpur</p>
                 </ListGroupItem>
-                <ListGroupItem className='ps-0 border-0'>
+                <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                   <span><i class="ri-phone-line"></i></span>
                   <p>+91 123456789</p>
                 </ListGroupItem>
-                <ListGroupItem className='ps-0 border-0'>
+                <ListGroupItem className='ps-0 border-0 d-flex align-items-center gap-2'>
                   <span><i class="ri-mail-line"></i></span>
                   <p>example123@gmail.com</p>
                 </ListGroupItem>
@@ -86,7 +85,7 @@ const Footer = () => {
           </Col>
 
           <Col lg='12'>
-            <p className="footer-copyright text-center">Copyright {year} developed by Sahiba Kumari</p>
+            <p className="footer-copyright">Copyright {year} developed by Sahiba Kumari</p>
           </Col>
         </Row>
       </Container>

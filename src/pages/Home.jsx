@@ -84,17 +84,17 @@ const Home = () => {
       <section className="timer-count">
         <Container>
           <Row>
-            <Col lg = '6' md = '6'>
+            <Col lg = '6' md = '12' className='count-down-col'>
               <div className="clock-top-content">
                 <h4 className='text-white fs-6 mb-2'>Limited offers</h4>
-                <h3 className='text-white fs-6 mb-3'>Quality</h3>
+                <h3 className='text-white fs-8 mb-3'>Quality Armchair</h3>
               </div>
               <Clock/>
               <motion.button whileTap={{scale: 1.2}} className="buy-btn store-btn">
                 <Link to ="/shop">Visit Store</Link>
               </motion.button>
             </Col>
-            <Col lg = '6' md = '6' className='text-end'>
+            <Col lg = '6' md = '12' className='text-end counter-img' >
               <img src={counterImg} alt="counter-img" />
             </Col>
           </Row>

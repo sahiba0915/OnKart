@@ -5,6 +5,7 @@ import { Col } from 'reactstrap';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { cartActions } from '../../redux/slices/cartSlice';
+import { toast } from 'react-toastify';
 
 const ProductCard = ({item}) => {
 
@@ -18,7 +19,7 @@ const ProductCard = ({item}) => {
       image: item.imgUrl
   }))
 
-  alert ('Product added to cart')
+ toast('Product added successfully');
   }
   return (
     <Col lg='3' md='4' className='mb-2'>

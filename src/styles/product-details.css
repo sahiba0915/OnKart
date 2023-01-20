@@ -20,3 +20,22 @@
     font-style: 1.3rem;
     font-weight: 500;
 }
+
+.tab-wrapper{
+    font-weight: 500;
+    color: var(--primary-color);
+    font-size: 1rem;
+}
+
+.tab-wrapper h6{
+    cursor:pointer;
+}
+
+.active-tab {
+    font-weight: 600;
+}
+
+.review-wrapper ul li span{
+   color: coral;
+   font-weight: 600;
+}
